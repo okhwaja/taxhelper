@@ -12,7 +12,7 @@ brew install geckodriver
 
 ### on Linux
 
-[Check out the releases in the geckodriver repo](https://github.com/mozilla/geckodriver/releases)
+[Download and install a release from the geckodriver repo](https://github.com/mozilla/geckodriver/releases)
 
 Then install the python requirements:
 ```bash
