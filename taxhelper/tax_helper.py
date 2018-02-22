@@ -44,7 +44,10 @@ class TaxHelper():
     self.click_common_button('continue')
 
     e = self.br.find_element_by_xpath('//*[@id="edt_00"]')
-    e.send_keys('LTC - cryptocurrency')
+    name = 'cryptocurrency'
+    if 'name' in t:
+      name = t['name']
+    e.send_keys(t)
 
     e = self.br.find_element_by_xpath('//*[@id="edt_01"]')
     v = str(round(float(t['net_proceeds']), 2))
@@ -114,10 +117,3 @@ class TaxHelper():
 
     self.click_common_button('no')
     sleep(1)
-
-def main():
-  t = TaxHelper('cred.ignore.json', 'ltc_sells.csv', start_index=154)
-  t.start()
-
-if __name__ == '__main__':
-  main()
